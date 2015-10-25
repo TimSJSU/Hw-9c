@@ -14,8 +14,8 @@ public class Hash {
 			int h = s.hashCode();
 
 			if (!map.containsKey(h)) {
-				map.put(h, set);
 				set.add(s);
+				map.put(h, set);
 			} else {
 				set = new TreeSet<String>();
 				set.add(s);
@@ -24,13 +24,13 @@ public class Hash {
 			}
 		}
 		Set<Integer> keyset = map.keySet();
-
 		for (int k : keyset) {
 			TreeSet<String> resultSet = map.get(k);
-			//if (resultSet.size() > 1)
-				System.out.print(k + ":");
-			for (String words : resultSet)
-				System.out.println(words + ",");
+			if (resultSet.size() > 1) {
+				System.out.print(k + ": ");
+				for (String words : resultSet)
+					System.out.println(words + ", ");
+			}
 		}
 	}
 }
