@@ -14,23 +14,23 @@ public class Hash {
 			int h = s.hashCode();
 
 			if (!map.containsKey(h)) {
-				//map.put(h, set);
-				//set.add(s);
+				map.put(h, set);
+				set.add(s);
 			} else {
 				set = new TreeSet<String>();
 				set.add(s);
 				map.put(h, set);
 
-				Set<Integer> keyset = map.keySet();
-
-				for (int k : keyset) {
-					TreeSet<String> resultSet = map.get(k);
-					if (resultSet.size() > 1)
-						System.out.println(k + ":");
-					for (String words : resultSet)
-						System.out.println(words + ",");
-				}
 			}
+		}
+		Set<Integer> keyset = map.keySet();
+
+		for (int k : keyset) {
+			TreeSet<String> resultSet = map.get(k);
+			if (resultSet.size() > 1)
+				System.out.println(k + ":");
+			for (String words : resultSet)
+				System.out.println(words + ",");
 		}
 	}
 }
