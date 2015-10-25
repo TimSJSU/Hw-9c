@@ -15,7 +15,7 @@ public class Hash {
 
 			if (!map.containsKey(h)) {
 				set.add(s);
-				//map.put(h, set);
+				map.put(h, set);
 			} else {
 				set = new TreeSet<String>();
 				set.add(s);
