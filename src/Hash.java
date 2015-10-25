@@ -30,7 +30,7 @@ public class Hash {
 				if (!resultSet.isEmpty())  
 					System.out.println(k + ":");
 				for (String words : resultSet)
-					System.out.println(s + ",");
+					System.out.println(words + ",");
 			}
 		}
 	}
