@@ -27,7 +27,7 @@ public class Hash {
 			for (int k : map.keySet()) {
 				TreeSet<String> resultSet = new TreeSet<String>();
 				resultSet = map.get(k);
-				if (!resultSet.isEmpty())  
+				if (resultSet.size() > 1)  
 					System.out.println(k + ":");
 				for (String words : resultSet)
 					System.out.println(words + ",");
