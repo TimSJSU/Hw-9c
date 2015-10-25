@@ -7,28 +7,30 @@ import java.util.TreeSet;
 public class Hash {
 	public static void main(String[] args) {
 		Map<Integer, TreeSet<String>> map = new TreeMap<Integer, TreeSet <String>>();
-		TreeSet<String> set = new TreeSet<String>();
 		Scanner in = new Scanner(System.in);
 		while (in.hasNext()) {
-			String input = in.next();
-			int hash = input.hashCode();
+			TreeSet<String> set = new TreeSet<String>();
+			String s = in.next();
+			int h = s.hashCode();
 			
-			if (!map.containsValue(hash)) {
-				set = map.get(hash);
-				set.add(input);
+			if (!map.containsKey(h)) {
+				map.put(h, set);
+				set.add(s);
 			} else {
 				set = new TreeSet<String>();
-				set.add(input);
-				map.put(hash, set);	
+				set.add(s);
+				map.put(h, set);	
 			}
 			
-			for (int h : map.keySet()) {
+			Set<Integer> keyset = map.keySet();
+			
+			for (int k : map.keySet()) {
 				TreeSet<String> resultSet = new TreeSet<String>();
-				resultSet = map.get(map.keySet());
+				resultSet = map.get(k);
 				if (!resultSet.isEmpty())  
-					System.out.println(resultSet.hashCode());
+					System.out.println(k + ":");
 				for (String words : resultSet)
-					System.out.println(input);
+					System.out.println(s + ",");
 			}
 		}
 	}
