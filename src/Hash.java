@@ -20,7 +20,7 @@ public class Hash {
 				set = new TreeSet<String>();
 				set.add(s);
 				map.put(h, set);	
-			}
+			
 			
 			Set<Integer> keyset = map.keySet();
 			
@@ -31,7 +31,7 @@ public class Hash {
 					System.out.println(map.get(k) + ":");
 				for (String words : resultSet)
 					System.out.println(words + ",");
-			}
+			}}
 		}
 	}
 }
