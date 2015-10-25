@@ -24,11 +24,10 @@ public class Hash {
 			
 			Set<Integer> keyset = map.keySet();
 			
-			for (int k : map.keySet()) {
-				TreeSet<String> resultSet = new TreeSet<String>();
-				resultSet = map.get(k);
+			for (int k : keyset) {
+				TreeSet<String> resultSet = map.get(k);
 				if (resultSet.size() > 1)  
-					System.out.println(map.get(k) + ":");
+					System.out.println(keyset + ":");
 				for (String words : resultSet)
 					System.out.println(words + ",");
 			}}
