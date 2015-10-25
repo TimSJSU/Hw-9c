@@ -17,20 +17,21 @@ public class Hash {
 				set.add(s);
 				map.put(h, set);
 			} else {
-				set = new TreeSet<String>();
+				set = map.get(h);
 				set.add(s);
 				map.put(h, set);
-
 			}
+			
 		}
 		Set<Integer> keyset = map.keySet();
 		for (int k : keyset) {
 			TreeSet<String> resultSet = map.get(k);
-			//if (resultSet.size() > 1) {
+			if (resultSet.size() > 1) {
 				System.out.print(k + ": ");
 				for (String words : resultSet)
 					System.out.print(words + ", ");
-			
+				System.out.println();
+			}
 		}
 	}
 }
