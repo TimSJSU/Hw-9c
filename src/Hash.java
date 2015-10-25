@@ -28,8 +28,13 @@ public class Hash {
 			TreeSet<String> resultSet = map.get(k);
 			if (resultSet.size() > 1) {
 				System.out.print(k + ": ");
-				for (String words : resultSet)
-					System.out.print(words + ", ");
+				int counter = 0;
+				for (String words : resultSet) {
+					counter++;
+					System.out.print(words);
+					if (counter != resultSet.size())
+						System.out.print(", ");
+				}
 				System.out.println();
 			}
 		}
