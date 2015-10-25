@@ -15,7 +15,7 @@ public class Hash {
 
 			if (!map.containsKey(h)) {
 				set.add(s);
-				map.put(h, set);
+				//map.put(h, set);
 			} else {
 				set = new TreeSet<String>();
 				set.add(s);
@@ -27,10 +27,10 @@ public class Hash {
 		for (int k : keyset) {
 			TreeSet<String> resultSet = map.get(k);
 			if (resultSet.size() > 1) {
-				System.out.print(k + ": ");
+				System.out.print(k + ": ");}
 				for (String words : resultSet)
 					System.out.println(words + ", ");
-			}
+			
 		}
 	}
 }
